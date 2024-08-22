@@ -14,22 +14,24 @@
                 Click or Drag to Upload
             </label>
         </div>
-        <label style="color: black;">
+        <label style="color: black;" for="sheetSelector">
             Sheet:
             <select id="sheetSelector" class="sheet-selector">
                 <!-- Options will be dynamically populated -->
             </select>
         </label>
 
-        <label style="color: black;">
+        <label style="color: black;" for="enableRangeSelection">
             <input type="checkbox" id="enableRangeSelection" checked /> Enable Range Selection,
         </label>
 
-        <label style="color: black;">
+        <label style="color: black;" for="copyWithHeader">
             <input type="checkbox" id="copyWithHeader" /> Copy with Header,
         </label>
-        <label for="fontSizeSlider" style="color: black;">Font Size:</label>
-        <input type="range" id="fontSizeSlider" min="10" max="24" step="1" />
+
+        <label style="color: black;" for="fontSizeSlider">
+            Font Size:<input type="range" id="fontSizeSlider" class="font-size-slider" min="8" max="32" step="1" />
+        </label>
         <button id="resetButton">Reset View</button>
         <button id="toggleThemeButton">Toggle Dark Mode</button>
     </div>
