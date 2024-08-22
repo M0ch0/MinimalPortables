@@ -1,5 +1,5 @@
 # XLSX Sanitizer
-
+![Screenshot](https://github.com/user-attachments/assets/66eccef7-dda3-452e-9f77-5f5c51c7f89c)
 This project provides a simple tool to sanitize XLSX (Microsoft Excel) files by removing potentially harmful content such as:
 
 * **Formulas:** All formulas are removed, leaving only the resulting values.
