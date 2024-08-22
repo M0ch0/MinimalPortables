@@ -17,6 +17,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    align-content: center;
+    text-align: center;
     background-color: #f2f2f2;
     padding: 8px;
     border-radius: 5px;
