@@ -12,9 +12,9 @@ This is a simple XLSX viewer that allows you to view and interact with spreadshe
 ## How to Use
 
 1. **Installation:**
-    * **Option 1: Open index.html**
-        Open index.html in your default browser, even if it's on your phone, or without internet connection, this works.
-    * **Option 2: Place index.html on your server**
+    * **Option 1: Open index.html.**
+        Open index.html in your default browser, even if it's on your phone, or without internet connection, this will works.
+    * **Option 2: Place this folder on your server.**
         Also works.
         
 
