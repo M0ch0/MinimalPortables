@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLSX Sanitizer</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>XLSX Sanitizer</h1>
+        <div class="file-upload">
+            <input type="file" id="fileInput" accept=".xlsx">
+            <label id="fileUploadLabel" for="fileInput">Upload your XLSX file</label>
+        </div>
+        <button id="sanitizeButton">Sanitize File</button>
+        <div id="result"></div>
+    </div>
+    <script src="./assets/js/xlsx.full.min.js"></script> <!-- Include xlsx.js -->
+    <script src="./assets/js/sanitizer.js"></script>
+</body>
+</html>
