@@ -7,11 +7,14 @@ class XLSXViewer {
         this.toggleThemeButton = document.getElementById('toggleThemeButton');
         this.copyWithHeaderCheckbox = document.getElementById('copyWithHeader');
         this.enableRangeSelectionCheckbox = document.getElementById('enableRangeSelection');
+        this.sheetSelector = document.getElementById('sheetSelector');
 
         this.isSelectingMultiple = false;
         this.initialCell = null;
+        this.workbook = null;
 
         this.fileInput.addEventListener('change', this.handleFile.bind(this));
+        this.sheetSelector.addEventListener('change', this.changeSheet.bind(this));
         this.fontSizeSlider.addEventListener('input', this.updateFontSize.bind(this));
         this.resetButton.addEventListener('click', this.resetView.bind(this));
         this.toggleThemeButton.addEventListener('click', this.toggleTheme.bind(this));
@@ -32,22 +35,26 @@ class XLSXViewer {
     }
 
     processFile(data) {
-        const workbook = XLSX.read(data, { type: 'array' });
-        const sheet = workbook.Sheets[workbook.SheetNames[0]];
+        this.workbook = XLSX.read(data, { type: 'array' });
+        const sheetNames = this.workbook.SheetNames;
 
-        for (const cell in sheet) {
-            if (cell[0] === '!') continue;
-            sheet[cell].s = {
-                border: {
-                    top: { style: "thin", color: { rgb: "000000" } },
-                    bottom: { style: "thin", color: { rgb: "000000" } },
-                    left: { style: "thin", color: { rgb: "000000" } },
-                    right: { style: "thin", color: { rgb: "000000" } }
-                }
-            };
+        this.sheetSelector.innerHTML = '';
+
+        sheetNames.forEach((name, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.text = name;
+            this.sheetSelector.appendChild(option);
+        });
+
+        this.displaySheet(this.workbook.Sheets[sheetNames[0]]);
+    }
+
+    changeSheet() {
+        if (this.workbook) {
+            const selectedSheet = this.workbook.Sheets[this.workbook.SheetNames[this.sheetSelector.value]];
+            this.displaySheet(selectedSheet);
         }
-
-        this.displaySheet(sheet);
     }
 
     displaySheet(sheet) {
@@ -73,7 +80,10 @@ class XLSXViewer {
     resetView() {
         this.sheetContainer.innerHTML = '';
         this.fileInput.value = null;
+        this.sheetSelector.innerHTML = '';
+        this.workbook = null;
     }
+
 
     toggleTheme() {
         document.body.classList.toggle('dark-mode');
