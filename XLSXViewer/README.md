@@ -1,5 +1,7 @@
 # XLSX Viewer
 
+![Screenshot](https://github.com/user-attachments/assets/709c3c07-e8e5-43e9-a392-dc7451c93d91)
+
 This is a simple XLSX viewer that allows you to view and interact with spreadsheet data directly in your web browser. It's built using JavaScript and the SheetJS library (xlsx.min.js).
 
 ## Features
