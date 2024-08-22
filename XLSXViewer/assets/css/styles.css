@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.menu-bar {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.menu-bar label, .menu-bar button, .menu-bar input[type="file"] {
+    margin-right: 10px;
+    margin-bottom: 5px;
+    flex: 1 1 1;
+    font-size: 1rem; /* Adjusts size with zoom level */
+}
+
+@media (max-width: 1200px) {
+    .menu-bar {
+        padding: 6px;
+    }
+
+    .menu-bar label, .menu-bar button, .menu-bar input[type="file"] {
+        font-size: 0.875rem; /* Smaller font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-bar label, .menu-bar button, .menu-bar input[type="file"] {
+        width: 100%;
+        font-size: 0.75rem; /* Even smaller font size */
+    }
+}
+
+#sheetContainer {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #2e2e2e;
+    color: #ffffff;
+}
+
+body.dark-mode th {
+    background-color: #444444;
+}
+
+.file-upload {
+    width: 90%;
+    max-width: 300px;
+    height: 50%;
+    max-height: 100px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px dashed #cccccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.file-upload:hover {
+    background-color: #f1f1f1;
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.file-upload-label {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #666666;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 1%;
+}
+
+.file-upload-label svg {
+    fill: #888888;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 1rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.highlight {
+    background-color: #b3d4fc;
+}
+
+/* Dark mode highlight */
+body.dark-mode .highlight {
+    background-color: #4a90e2;
+}
+
+#sheetContainer {
+    user-select: none; /* Prevents text selection */
+}
+
+#sheetContainer .highlight {
+    user-select: auto; /* Allows text selection inside highlighted cells */
+}
+
+
+@media (max-width: 768px) {
+    .menu-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-bar label, .menu-bar button, .menu-bar input[type="file"] {
+        width: 100%;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 4px;
+    }
+}

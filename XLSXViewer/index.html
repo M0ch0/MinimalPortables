@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLSX Viewer</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <div id="menuBar" class="menu-bar">
+        <div class="file-upload">
+            <input type="file" id="fileInput" />
+            <label for="fileInput" class="file-upload-label">
+                Click or Drag to Upload
+            </label>
+        </div>
+        <label style="color: black;">
+            <input type="checkbox" id="enableRangeSelection" checked /> Enable Range Selection,
+        </label>
+
+        <label style="color: black;">
+            <input type="checkbox" id="copyWithHeader" /> Copy with Header,
+        </label>
+        <label for="fontSizeSlider" style="color: black;">Font Size:</label>
+        <input type="range" id="fontSizeSlider" min="10" max="24" step="1" />
+        <button id="resetButton">Reset View</button>
+        <button id="toggleThemeButton">Toggle Dark Mode</button>
+    </div>
+    <div id="sheetContainer"></div>
+    <script src="./assets/js/xlsx.min.js"></script>
+    <script src="./assets/js/viewer.js"></script>
+</body>
+</html>
