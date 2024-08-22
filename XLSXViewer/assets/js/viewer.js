@@ -213,3 +213,24 @@ document.getElementById('fileInput').addEventListener('change', function() {
     const label = document.querySelector('.file-upload-label');
     label.textContent = fileName ? fileName : 'Click or Drag to Upload';
 });
+
+const dropArea = document.querySelector('.file-upload'); // Assuming the file upload area has this class
+
+dropArea.addEventListener('dragover', (event) => {
+    event.preventDefault(); // Necessary to allow drop
+    dropArea.classList.add('highlight'); // Optional visual feedback
+});
+
+dropArea.addEventListener('dragleave', () => {
+    dropArea.classList.remove('highlight'); // Optional visual feedback
+});
+
+dropArea.addEventListener('drop', (event) => {
+    event.preventDefault();
+    dropArea.classList.remove('highlight'); // Optional visual feedback
+    const file = event.dataTransfer.files[0];
+    const fileInput = document.getElementById('fileInput');
+    fileInput.files = event.dataTransfer.files; // Set the file input's files
+    // Trigger the change event to handle the file
+    fileInput.dispatchEvent(new Event('change'));
+});

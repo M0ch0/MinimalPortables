@@ -159,6 +159,10 @@ button:hover {
     background-color: #b3d4fc;
 }
 
+.file-upload.highlight {
+    background-color: #e0e0e0;
+}
+
 /* Dark mode highlight */
 body.dark-mode .highlight {
     background-color: #4a90e2;
