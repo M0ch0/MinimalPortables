@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portable Tools</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .project-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .project-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .project-item:hover {
+            transform: translateY(-5px);
+        }
+        .project-link {
+            display: block;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .project-description {
+            margin-top: 10px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Portable Tools</h1>
+        <ul class="project-list" id="projectList">
+
+        </ul>
+    </div>
+    <script>
+        const projects = [
+            { name: "XLSX Viewer", url: "./XLSXViewer/index.html", description: "View and interact with XLSX files directly in your browser." },
+            { name: "XLSX Sanitizer", url: "./XLSXSanitizer/index.html", description: "Remove potentially harmful content from XLSX files." },
+        ];
+
+        const projectList = document.getElementById('projectList');
+
+        projects.forEach(project => {
+            const li = document.createElement('li');
+            li.className = 'project-item';
+            li.innerHTML = `
+                <a href="${project.url}" class="project-link">${project.name}</a>
+                <p class="project-description">${project.description}</p>
+            `;
+            projectList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
